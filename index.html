@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龚金烨 - 个人主页</title>
+    <meta name="description" content="龚金烨的个人主页，聚焦数字 IC 设计、AI/NPU 硬件加速，展示教育背景、实习经历与核心项目。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jinye-gong.github.io/my_profile/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='46'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:title" content="龚金烨 - 个人主页">
+    <meta property="og:description" content="数字 IC 设计 / AI/NPU 硬件加速">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jinye-gong.github.io/my_profile/">
+    <meta property="og:site_name" content="my_profile">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="龚金烨 - 个人主页">
+    <meta name="twitter:description" content="数字 IC 设计 / AI/NPU 硬件加速">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .sidebar {
+            width: 320px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .sidebar p.title {
+            color: #38bdf8;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-list a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-list a:hover {
+            color: #38bdf8;
+        }
+
+        .contact-icon {
+            width: 1.1rem;
+            margin-right: 8px;
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        .section-title-side {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #94a3b8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 5px;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            border: 1px solid #475569;
+            background: transparent;
+            color: #cbd5e1;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background: #0ea5e9;
+            border-color: #0ea5e9;
+            color: #ffffff;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 50px;
+            background-color: #fafafa;
+        }
+
+        .section-title-main {
+            font-size: 1.5rem;
+            color: #111827;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title-main::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: #0ea5e9;
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #bae6fd;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .card-date {
+            font-size: 0.85rem;
+            color: #6b7280;
+            background: #f3f4f6;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: #0ea5e9;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .card-content {
+            list-style-type: none;
+        }
+
+        .card-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        .card-content li::before {
+            content: "•";
+            color: #0ea5e9;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #0369a1;
+            text-decoration: none;
+            padding: 6px 12px;
+            border: 1px solid #bae6fd;
+            border-radius: 999px;
+            background: #f0f9ff;
+        }
+
+        .project-link:hover {
+            background: #e0f2fe;
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 30px 20px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .card-header {
+                flex-direction: column;
+            }
+
+            .card-date {
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h1 data-i18n="displayName">龚金烨</h1>
+            <div class="lang-switch" aria-label="language switcher">
+                <button id="btn-zh" class="lang-btn active" type="button">中</button>
+                <button id="btn-en" class="lang-btn" type="button">EN</button>
+            </div>
+            <p class="title" data-i18n="roleTitle">数字 IC 设计 / AI/NPU 硬件加速器</p>
+
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-phone fa-fw contact-icon" aria-hidden="true"></i><span>+86 199 8085 8265</span></li>
+                <li><i class="fa-solid fa-envelope fa-fw contact-icon" aria-hidden="true"></i><a href="mailto:jinyeg@kth.se">jinyeg@kth.se</a></li>
+                <li><i class="fa-brands fa-github fa-fw contact-icon" aria-hidden="true"></i><a href="https://github.com/jinye-gong" target="_blank" rel="noopener noreferrer">github.com/jinye-gong</a></li>
+            </ul>
+
+            <h3 class="section-title-side" data-i18n="skillsTitle">专业技能</h3>
+            <div class="skill-tags">
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">Chisel / Scala</span>
+                <span class="tag">C / C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">ChiselSim</span>
+                <span class="tag">Verilator</span>
+                <span class="tag">ModelSim</span>
+                <span class="tag">Synopsys DC</span>
+                <span class="tag">RISCOF</span>
+                <span class="tag">RISC-V</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="section-title-main" data-i18n="educationTitle">教育背景</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" data-i18n="kthTitle">瑞典皇家理工学院 (KTH)</div>
+                    <div class="card-date" data-i18n="kthDate">2025.09 - 2027.06（预计）</div>
+                </div>
+                <div class="card-subtitle" data-i18n="kthSubtitle">硕士 | 嵌入式系统专业 (Platform Track)</div>
+                <ul class="card-content">
+                    <li data-i18n="kthItem1">研究方向：数字 IC 设计、AI/NPU 硬件加速器</li>
+                    <li data-i18n="kthItem2">核心课程：ASIC/FPGA、数字系统设计与验证、计算机体系结构</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" data-i18n="uestcTitle">电子科技大学 (UESTC)</div>
+                    <div class="card-date">2021.09 - 2025.06</div>
+                </div>
+                <div class="card-subtitle" data-i18n="uestcSubtitle">本科 | 自动化专业</div>
+                <ul class="card-content">
+                    <li data-i18n="uestcItem1">GPA: 3.6/4.0</li>
+                    <li data-i18n="uestcItem2">荣誉：嵌入式芯片与系统设计竞赛全国一等奖 (Top 2.5%)</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title-main" data-i18n="internshipTitle">实习经历</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" data-i18n="boscTitle">北京开源芯片研究院｜数字 IC 设计实习生（NPU 向量执行单元 EXE1）</div>
+                    <div class="card-date" data-i18n="boscDate">2026.06 - 至今</div>
+                </div>
+                <ul class="card-content">
+                    <li data-i18n="boscItem1">微架构设计：面向 VLEN=1024、4 × 256-bit lanes 向量核，设计 Fixed Path 与 Credit Path 双通道架构；完成 175+ 条 RVV 及 NPU 扩展指令的执行资源分类与 19 个执行子模块规划。</li>
+                    <li data-i18n="boscItem2">流水线实现：使用 Chisel 搭建 Decode → Dispatch → Execute → Align/Arbiter → Writeback 主链路，实现 Fixed Path 固定周期对齐及 Credit Path ready/valid 握手与流量控制。</li>
+                    <li data-i18n="boscItem3">验证与约束：基于 ChiselSim 与 Verilator 建立分层回归，对齐 12 nm NPU 项目的接口契约、流水延迟及时序预算。</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title-main" data-i18n="projectsTitle">项目经历</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" data-i18n="itaTitle">Integer Transformer Accelerator (ITA) | Softmax 算子 v2</div>
+                    <div class="card-date" data-i18n="itaDate">2025.10 - 2026.05</div>
+                </div>
+                <ul class="card-content">
+                    <li data-i18n="itaItem1">微架构改进：重构 DA/DI/EN 三阶段流式数据通路，实现 QK 阶段分母累加与 AV 阶段逐元素归一化的行级流水；通过行级 FIFO、背压机制和双通道 Ping-pong DI 保障跨阶段数据依赖。</li>
+                    <li data-i18n="itaItem2">RTL 与性能：采用 CLZ + LUT 单流水级定点倒数替代串行除法器；DI 请求至写回延迟由约 12–22 cycles 降至 2 cycles，倒数路径加速约 6–11×。</li>
+                    <li data-i18n="itaItem3">验证：建立 bit-true Golden Model 与自动化回归，覆盖定点舍入、饱和、极值及边界输入；完成 113 个定向用例与 60,700 组随机向量回归。</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" data-i18n="rvTitle">RISC-V RV32I 五级流水线 CPU 设计与验证 | KTH IL2234</div>
+                    <div class="card-date" data-i18n="rvDate">2025.09 - 2025.11</div>
+                </div>
+                <ul class="card-content">
+                    <li data-i18n="rvItem1">RTL 设计：使用 SystemVerilog 实现 RV32I 五级流水线 CPU 和 Harvard 存储系统，设计数据前递、load-use stall、branch flush 等冒险处理机制。</li>
+                    <li data-i18n="rvItem2">验证与上板：通过 RISCOF 运行 riscv-arch-test 架构合规测试，使用 GNU RISC-V 工具链生成测试程序，并在 Urbana FPGA 上完成上板验证。</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title-main" data-i18n="linksTitle">项目链接</h2>
+            <div class="project-links">
+                <a class="project-link" href="https://github.com/jinye-gong/ITA-Accelerator-Verification" target="_blank" rel="noopener noreferrer">ITA Accelerator Verification</a>
+                <a class="project-link" href="https://github.com/jinye-gong/RV32I-CPU-SystemVerilog-" target="_blank" rel="noopener noreferrer">RV32I CPU SystemVerilog</a>
+            </div>
+        </main>
+    </div>
+    <script>
+        const I18N = {
+            zh: {
+                pageTitle: "龚金烨 - 个人主页",
+                pageDescription: "龚金烨的个人主页，聚焦数字 IC 设计、AI/NPU 硬件加速，展示教育背景、实习经历与核心项目。",
+                displayName: "龚金烨",
+                roleTitle: "数字 IC 设计 / AI/NPU 硬件加速器",
+                skillsTitle: "专业技能",
+                educationTitle: "教育背景",
+                internshipTitle: "实习经历",
+                projectsTitle: "项目经历",
+                linksTitle: "项目链接",
+                kthTitle: "瑞典皇家理工学院 (KTH)",
+                kthDate: "2025.09 - 2027.06（预计）",
+                kthSubtitle: "硕士 | 嵌入式系统专业 (Platform Track)",
+                kthItem1: "研究方向：数字 IC 设计、AI/NPU 硬件加速器",
+                kthItem2: "核心课程：ASIC/FPGA、数字系统设计与验证、计算机体系结构",
+                uestcTitle: "电子科技大学 (UESTC)",
+                uestcSubtitle: "本科 | 自动化专业",
+                uestcItem1: "GPA: 3.6/4.0",
+                uestcItem2: "荣誉：嵌入式芯片与系统设计竞赛全国一等奖 (Top 2.5%)",
+                boscTitle: "北京开源芯片研究院｜数字 IC 设计实习生（NPU 向量执行单元 EXE1）",
+                boscDate: "2026.06 - 至今",
+                boscItem1: "微架构设计：面向 VLEN=1024、4 × 256-bit lanes 向量核，设计 Fixed Path 与 Credit Path 双通道架构；完成 175+ 条 RVV 及 NPU 扩展指令的执行资源分类与 19 个执行子模块规划。",
+                boscItem2: "流水线实现：使用 Chisel 搭建 Decode → Dispatch → Execute → Align/Arbiter → Writeback 主链路，实现 Fixed Path 固定周期对齐及 Credit Path ready/valid 握手与流量控制。",
+                boscItem3: "验证与约束：基于 ChiselSim 与 Verilator 建立分层回归，对齐 12 nm NPU 项目的接口契约、流水延迟及时序预算。",
+                itaTitle: "Integer Transformer Accelerator (ITA) | Softmax 算子 v2",
+                itaDate: "2025.10 - 2026.05",
+                itaItem1: "微架构改进：重构 DA/DI/EN 三阶段流式数据通路，实现 QK 阶段分母累加与 AV 阶段逐元素归一化的行级流水；通过行级 FIFO、背压机制和双通道 Ping-pong DI 保障跨阶段数据依赖。",
+                itaItem2: "RTL 与性能：采用 CLZ + LUT 单流水级定点倒数替代串行除法器；DI 请求至写回延迟由约 12–22 cycles 降至 2 cycles，倒数路径加速约 6–11×。",
+                itaItem3: "验证：建立 bit-true Golden Model 与自动化回归，覆盖定点舍入、饱和、极值及边界输入；完成 113 个定向用例与 60,700 组随机向量回归。",
+                rvTitle: "RISC-V RV32I 五级流水线 CPU 设计与验证 | KTH IL2234",
+                rvDate: "2025.09 - 2025.11",
+                rvItem1: "RTL 设计：使用 SystemVerilog 实现 RV32I 五级流水线 CPU 和 Harvard 存储系统，设计数据前递、load-use stall、branch flush 等冒险处理机制。",
+                rvItem2: "验证与上板：通过 RISCOF 运行 riscv-arch-test 架构合规测试，使用 GNU RISC-V 工具链生成测试程序，并在 Urbana FPGA 上完成上板验证。"
+            },
+            en: {
+                pageTitle: "Jinye Gong - Personal Website",
+                pageDescription: "Personal website of Jinye Gong, focused on digital IC design and AI/NPU hardware acceleration.",
+                displayName: "Jinye Gong",
+                roleTitle: "Digital IC Design / AI/NPU Hardware Accelerator",
+                skillsTitle: "Skills",
+                educationTitle: "Education",
+                internshipTitle: "Internship",
+                projectsTitle: "Projects",
+                linksTitle: "Project Links",
+                kthTitle: "KTH Royal Institute of Technology (Sweden)",
+                kthDate: "2025.09 - 2027.06 (Expected)",
+                kthSubtitle: "M.Sc. | Embedded Systems (Platform Track)",
+                kthItem1: "Focus: digital IC design, AI/NPU hardware accelerator.",
+                kthItem2: "Key courses: ASIC/FPGA, digital system design & verification, computer architecture.",
+                uestcTitle: "University of Electronic Science and Technology of China (UESTC)",
+                uestcSubtitle: "B.Eng. | Automation",
+                uestcItem1: "GPA: 3.6/4.0",
+                uestcItem2: "Award: National First Prize in Embedded Chip and System Design Competition (Top 2.5%).",
+                boscTitle: "Beijing Institute of Open Source Chip | Digital IC Design Intern (NPU Vector EXE1 Unit)",
+                boscDate: "2026.06 - Present",
+                boscItem1: "Microarchitecture: Designed Fixed Path and Credit Path dual-channel architecture for VLEN=1024, 4×256-bit lanes vector core; classified 175+ RVV and NPU extension instructions into 19 execution sub-modules.",
+                boscItem2: "Pipeline: Built Decode → Dispatch → Execute → Align/Arbiter → Writeback pipeline in Chisel; implemented fixed-cycle alignment for Fixed Path and ready/valid flow control for Credit Path.",
+                boscItem3: "Verification: Established hierarchical regression with ChiselSim and Verilator, aligned with 12 nm NPU project interface contracts, pipeline latency, and timing budgets.",
+                itaTitle: "Integer Transformer Accelerator (ITA) | Softmax Operator v2",
+                itaDate: "2025.10 - 2026.05",
+                itaItem1: "Microarchitecture: Refactored DA/DI/EN three-stage streaming datapath; achieved row-level pipelining of denominator accumulation (QK) and per-element normalization (AV) with row-level FIFOs, backpressure, and dual-channel Ping-pong DI.",
+                itaItem2: "RTL & Performance: Replaced serial divider with CLZ + LUT single-stage fixed-point reciprocal; reduced DI-to-writeback latency from ~12–22 cycles to 2 cycles (~6–11× speedup).",
+                itaItem3: "Verification: Built bit-true Golden Model with automated regression covering fixed-point rounding, saturation, corner cases; 113 directed tests and 60,700 random vector regressions all passed.",
+                rvTitle: "RISC-V RV32I 5-Stage Pipeline CPU Design & Verification | KTH IL2234",
+                rvDate: "2025.09 - 2025.11",
+                rvItem1: "RTL Design: Implemented RV32I 5-stage pipelined CPU with Harvard memory system in SystemVerilog; designed forwarding, load-use stall, and branch flush hazard handling.",
+                rvItem2: "Verification: Ran riscv-arch-test suite via RISCOF; generated test programs with GNU RISC-V toolchain and validated on Urbana FPGA board."
+            }
+        };
+
+        function applyLanguage(lang) {
+            const dict = I18N[lang] || I18N.zh;
+            document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+            document.title = dict.pageTitle;
+            document.querySelector('meta[name="description"]').setAttribute("content", dict.pageDescription);
+            document.querySelector('meta[name="twitter:title"]').setAttribute("content", dict.pageTitle);
+            document.querySelector('meta[name="twitter:description"]').setAttribute("content", dict.roleTitle);
+            document.querySelector('meta[property="og:title"]').setAttribute("content", dict.pageTitle);
+            document.querySelector('meta[property="og:description"]').setAttribute("content", dict.roleTitle);
+
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const key = el.getAttribute("data-i18n");
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            document.getElementById("btn-zh").classList.toggle("active", lang === "zh");
+            document.getElementById("btn-en").classList.toggle("active", lang === "en");
+            localStorage.setItem("site-lang", lang);
+        }
+
+        document.getElementById("btn-zh").addEventListener("click", () => applyLanguage("zh"));
+        document.getElementById("btn-en").addEventListener("click", () => applyLanguage("en"));
+        applyLanguage(localStorage.getItem("site-lang") === "en" ? "en" : "zh");
+    </script>
+</body>
+</html>
